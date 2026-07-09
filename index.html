@@ -45,18 +45,19 @@
   .menu-btn{display:none;background:none;border:1px solid var(--gold);color:var(--gold-light);font-size:1.3rem;padding:.2rem .6rem;border-radius:4px;cursor:pointer}
 
   /* ---------- hero ---------- */
-  .hero{position:relative;background:
-      radial-gradient(1200px 500px at 50% -10%, #7cb518 0%, var(--maroon) 55%);
-      color:var(--ivory);overflow:hidden}
-  .hero-inner{max-width:1150px;margin:0 auto;padding:5.5rem 1.25rem 7.5rem;text-align:center;position:relative;z-index:2}
+  .hero{position:relative;color:var(--ivory);overflow:hidden;background:var(--maroon)}
+  .hero .bg{position:absolute;inset:0;background:url('images/home/hero.jpg') center 35%/cover no-repeat}
+  .hero .bg::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(47,58,8,.78) 0%, rgba(63,84,4,.62) 55%, rgba(47,58,8,.85) 100%)}
+  .hero-inner{max-width:1150px;margin:0 auto;padding:6rem 1.25rem 8rem;text-align:center;position:relative;z-index:2}
   .hero .ta-line{font-family:var(--tamil);color:var(--gold-light);font-size:1.05rem;margin-bottom:.9rem}
-  .hero h1{font-family:var(--display);font-weight:400;font-size:clamp(2.1rem,5.5vw,3.6rem);letter-spacing:.03em;color:#fff}
+  .hero h1{font-family:var(--display);font-weight:400;font-size:clamp(2.1rem,5.5vw,3.6rem);letter-spacing:.03em;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.45)}
   .hero h1 span{color:var(--gold-light)}
-  .hero p.tag{max-width:640px;margin:1.2rem auto 2rem;font-size:1.05rem;color:#fdf6d8;font-weight:300}
-  .hero .cta{display:inline-block;background:var(--gold);color:var(--maroon);font-family:var(--display);letter-spacing:.08em;text-decoration:none;padding:.8rem 2.2rem;border-radius:2px;transition:.25s}
+  .hero p.tag{max-width:640px;margin:1.2rem auto 2rem;font-size:1.05rem;color:#fdf6d8;font-weight:300;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+  .hero .cta{display:inline-block;background:var(--gold);color:var(--ink);font-family:var(--display);letter-spacing:.08em;text-decoration:none;padding:.8rem 2.2rem;border-radius:2px;transition:.25s}
   .hero .cta:hover{background:var(--gold-light)}
-  .hero .cta.ghost{background:transparent;border:1px solid var(--gold);color:var(--gold-light);margin-left:.8rem}
-  .gopuram{position:absolute;bottom:-4px;left:0;width:100%;z-index:1;opacity:.9}
+  .hero .cta.ghost{background:rgba(47,58,8,.35);border:1px solid var(--gold);color:var(--gold-light);margin-left:.8rem}
+  .gopuram{position:absolute;bottom:-4px;left:0;width:100%;z-index:1;opacity:.95}
 
   /* ---------- section scaffolding ---------- */
   section{padding:4.5rem 1.25rem}
@@ -69,15 +70,27 @@
   .gold-rule svg{width:22px;height:22px;fill:var(--gold)}
 
   /* ---------- about ---------- */
-  .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center}
+  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
   .about-grid p{margin-bottom:1rem}
-  .jubilee-card{background:var(--maroon);color:var(--ivory);padding:2.2rem;border:1px solid var(--gold);position:relative}
+  .about-photo{border:1px solid var(--gold);padding:8px;background:#fff;box-shadow:0 14px 30px rgba(92,128,1,.18)}
+  .about-photo img{width:100%}
+  .about-photo figcaption{font-size:.85rem;text-align:center;padding-top:.5rem;color:#5d6b1e}
+  .jubilee-card{background:var(--maroon);color:var(--ivory);padding:1.8rem 2rem;border:1px solid var(--gold);position:relative;margin-top:1.4rem}
   .jubilee-card::after{content:"";position:absolute;inset:8px;border:1px solid rgba(251,176,45,.45);pointer-events:none}
-  .jubilee-card h3{font-family:var(--display);font-weight:400;color:var(--gold-light);font-size:1.4rem;margin-bottom:.8rem}
-  .jubilee-card p{font-size:.98rem;color:#f7f2cd;font-weight:300}
+  .jubilee-card h3{font-family:var(--display);font-weight:400;color:var(--gold-light);font-size:1.3rem;margin-bottom:.6rem}
+  .jubilee-card p{font-size:.95rem;color:#f7f2cd;font-weight:300;margin:0}
+
+  /* ---------- glimpses strip ---------- */
+  .glimpses{background:var(--ivory-2);padding-top:3.5rem;padding-bottom:3.5rem}
+  .strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+  .strip a{display:block;position:relative;padding-top:70%;overflow:hidden;border:1px solid var(--gold)}
+  .strip img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s}
+  .strip a:hover img{transform:scale(1.05)}
+  .strip figcaption{position:absolute;bottom:0;left:0;right:0;background:rgba(47,58,8,.82);color:var(--ivory);font-size:.8rem;padding:.35rem .7rem;letter-spacing:.04em}
+  .strip-cta{text-align:center;margin-top:1.8rem}
+  .strip-cta a{font-family:var(--display);letter-spacing:.06em;text-decoration:none;border-bottom:1px solid var(--gold)}
 
   /* ---------- tradition cards ---------- */
-  .tradition{background:var(--ivory-2)}
   .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
   .card{background:var(--ivory);border:1px solid #e6d879;border-top:4px solid var(--kumkum);padding:1.8rem;transition:.25s}
   .card:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(92,128,1,.18)}
@@ -93,43 +106,62 @@
   .event h3{font-family:var(--display);font-weight:400;color:var(--maroon);font-size:1.15rem}
   .event p{font-size:.95rem}
 
-  /* ---------- video gallery ---------- */
+  /* ---------- video gallery (list) ---------- */
   .videos{background:var(--maroon);color:var(--ivory)}
   .videos .sec-head h2{color:#fff}
   .videos .sec-head .eyebrow{color:var(--gold-light)}
-  .videos .gold-rule::before,.videos .gold-rule::after{background:var(--gold)}
   .player-shell{max-width:900px;margin:0 auto 3rem;border:1px solid var(--gold);padding:8px;background:#4d6b01}
   .player-shell .ratio{position:relative;padding-top:56.25%}
   .player-shell iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
   .player-note{text-align:center;font-size:.9rem;color:#f5efc4;margin-top:.7rem;font-weight:300}
-  .video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:1rem}
-  .vid{background:#4d6b01;border:1px solid rgba(251,176,45,.5);text-decoration:none;color:var(--ivory);transition:.25s;display:block}
-  .vid:hover{border-color:var(--gold-light);transform:translateY(-4px)}
-  .vid .thumb{position:relative;padding-top:56.25%;overflow:hidden;background:#435c00}
-  .vid .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .vid .thumb .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
-  .vid .thumb .play span{width:52px;height:52px;border-radius:50%;background:rgba(251,97,7,.92);display:flex;align-items:center;justify-content:center;transition:.25s}
-  .vid:hover .thumb .play span{background:var(--kumkum);transform:scale(1.08)}
-  .vid .thumb .play svg{width:20px;height:20px;fill:#fff;margin-left:3px}
-  .vid .meta{padding:.9rem 1rem 1.1rem}
-  .vid .meta h3{font-family:var(--body);font-weight:500;font-size:.92rem;line-height:1.45;color:#fdf9e3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .vid .meta time{font-size:.78rem;color:var(--gold-light);letter-spacing:.05em}
+  .video-list{max-width:960px;margin:0 auto;display:flex;flex-direction:column;gap:1.2rem}
+  .vrow{display:flex;gap:1.4rem;background:#4d6b01;border:1px solid rgba(251,176,45,.5);padding:1rem;text-decoration:none;color:var(--ivory);transition:.25s;align-items:flex-start}
+  .vrow:hover{border-color:var(--gold-light);transform:translateY(-3px)}
+  .vrow .thumb{flex:none;width:280px;max-width:38%;position:relative}
+  .vrow .thumb .frame{position:relative;padding-top:56.25%;overflow:hidden;background:#435c00}
+  .vrow .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .vrow .thumb .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+  .vrow .thumb .play span{width:48px;height:48px;border-radius:50%;background:rgba(251,97,7,.92);display:flex;align-items:center;justify-content:center;transition:.25s}
+  .vrow:hover .thumb .play span{transform:scale(1.1)}
+  .vrow .thumb .play svg{width:18px;height:18px;fill:#fff;margin-left:3px}
+  .vrow .info h3{font-family:var(--display);font-weight:400;font-size:1.1rem;line-height:1.45;color:#fdf9e3;margin-bottom:.25rem}
+  .vrow .info time{font-size:.78rem;color:var(--gold-light);letter-spacing:.06em;text-transform:uppercase}
+  .vrow .info p{font-size:.9rem;color:#f5efc4;font-weight:300;margin-top:.5rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .vrow .info .watch{display:inline-block;margin-top:.7rem;font-size:.85rem;color:var(--gold-light);letter-spacing:.05em;border-bottom:1px solid rgba(251,176,45,.6)}
   .videos .channel-cta{text-align:center;margin-top:2.6rem}
   .videos .channel-cta a{display:inline-block;border:1px solid var(--gold);color:var(--gold-light);text-decoration:none;font-family:var(--display);letter-spacing:.08em;padding:.75rem 2rem;transition:.25s}
-  .videos .channel-cta a:hover{background:var(--gold);color:var(--maroon)}
+  .videos .channel-cta a:hover{background:var(--gold);color:var(--ink)}
   #videoStatus{text-align:center;color:#f5efc4;font-weight:300;margin-top:1rem}
 
-  /* ---------- gallery ---------- */
-  .photo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-  .photo{position:relative;padding-top:75%;background:linear-gradient(135deg,var(--maroon-2),var(--maroon));border:1px solid #e6d879;overflow:hidden}
-  .photo svg{position:absolute;inset:0;margin:auto;width:44px;height:44px;fill:rgba(243,222,44,.6)}
-  .photo figcaption{position:absolute;bottom:0;left:0;right:0;background:rgba(59,13,12,.85);color:var(--ivory);font-size:.8rem;padding:.4rem .7rem;letter-spacing:.04em}
+  /* ---------- photo gallery ---------- */
+  .photo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem}
+  .photo-grid button{position:relative;padding:0;padding-top:70%;border:1px solid #e6d879;background:#e9e3c2;cursor:pointer;overflow:hidden}
+  .photo-grid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .35s}
+  .photo-grid button:hover img{transform:scale(1.05)}
+  .gallery-more{text-align:center;margin-top:2rem}
+  .gallery-more button{font-family:var(--display);letter-spacing:.08em;font-size:1rem;background:var(--gold);border:none;color:var(--ink);padding:.75rem 2.2rem;cursor:pointer;transition:.25s}
+  .gallery-more button:hover{background:var(--gold-light)}
+
+  /* lightbox */
+  .lightbox{position:fixed;inset:0;background:rgba(31,38,5,.94);display:none;align-items:center;justify-content:center;z-index:100;padding:2rem}
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:92vw;max-height:86vh;border:2px solid var(--gold)}
+  .lightbox .lb-btn{position:absolute;background:none;border:none;color:var(--gold-light);font-size:2.6rem;cursor:pointer;line-height:1;padding:.5rem;font-family:var(--body)}
+  .lightbox .close{top:1rem;right:1.4rem}
+  .lightbox .prev{left:.8rem;top:50%;transform:translateY(-50%)}
+  .lightbox .next{right:.8rem;top:50%;transform:translateY(-50%)}
+  .lightbox .count{position:absolute;bottom:1.2rem;left:50%;transform:translateX(-50%);color:#f5efc4;font-size:.9rem;letter-spacing:.1em}
 
   /* ---------- contact ---------- */
   .contact{background:var(--ivory-2)}
-  .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;max-width:1000px;margin:0 auto}
-  .contact .card{border-top-color:var(--gold)}
-  .contact .card p{word-break:break-word}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;max-width:1050px;margin:0 auto;align-items:stretch}
+  .contact .card{border-top-color:var(--gold);height:100%}
+  .contact .card p{word-break:break-word;margin-bottom:.9rem}
+  .contact .card p:last-child{margin-bottom:0}
+  .contact .label{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--kumkum);display:block}
+  .map-shell{border:1px solid var(--gold);padding:6px;background:#fff}
+  .map-shell iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+  .map-link{display:inline-block;margin-top:.8rem;font-size:.9rem}
 
   /* ---------- footer ---------- */
   footer{background:var(--maroon);color:#f5efc4;border-top:3px solid var(--gold)}
@@ -141,9 +173,10 @@
   /* ---------- responsive ---------- */
   @media (max-width:900px){
     .about-grid{grid-template-columns:1fr}
-    .cards,.contact-grid{grid-template-columns:1fr 1fr}
-    .video-grid{grid-template-columns:1fr 1fr}
-    .photo-grid{grid-template-columns:1fr 1fr}
+    .cards{grid-template-columns:1fr 1fr}
+    .strip{grid-template-columns:1fr 1fr}
+    .photo-grid{grid-template-columns:1fr 1fr 1fr}
+    .contact-grid{grid-template-columns:1fr}
   }
   @media (max-width:640px){
     nav ul{position:absolute;top:100%;left:0;right:0;background:var(--maroon);flex-direction:column;gap:0;display:none;border-bottom:2px solid var(--gold)}
@@ -151,9 +184,12 @@
     nav li{border-top:1px solid rgba(251,176,45,.3)}
     nav a{display:block;padding:.9rem 1.25rem}
     .menu-btn{display:block}
-    .cards,.contact-grid,.video-grid{grid-template-columns:1fr}
+    .cards{grid-template-columns:1fr}
+    .photo-grid{grid-template-columns:1fr 1fr}
     .event{flex-direction:column;gap:.3rem}
     .hero .cta.ghost{margin-left:0;margin-top:.8rem}
+    .vrow{flex-direction:column}
+    .vrow .thumb{width:100%;max-width:100%}
   }
   @media (prefers-reduced-motion:reduce){
     *{transition:none!important;animation:none!important}
@@ -169,7 +205,6 @@
   <div class="nav-wrap">
     <a class="brand" href="#home" aria-label="Sri Thyagabrahma Sabha home">
       <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
-        <!-- veena-inspired mark -->
         <circle cx="24" cy="24" r="22" fill="none" stroke="#fbb02d" stroke-width="1.5"/>
         <path d="M13 33c8-2 14-8 16-16l4-4 2 2-4 4c-2 8-8 14-16 16l-2-2z" fill="#fbb02d"/>
         <circle cx="14" cy="34" r="4.5" fill="none" stroke="#f3de2c" stroke-width="1.5"/>
@@ -185,7 +220,6 @@
       <ul id="navList">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#tradition">Tradition</a></li>
         <li><a href="#events">Events</a></li>
         <li><a href="#videos">Video Gallery</a></li>
         <li><a href="#gallery">Photos</a></li>
@@ -199,15 +233,15 @@
 
   <!-- ================= HERO ================= -->
   <div class="hero">
+    <div class="bg" role="img" aria-label="Concert on the Sabha stage"></div>
     <div class="hero-inner">
       <p class="ta-line">நாத பிரம்மத்தின் சேவையில்</p>
       <h1>Sri Thyagabrahma Sabha<br><span>Thanjavur</span></h1>
       <p class="tag">Carrying forward the musical legacy of Saint Thyagaraja through concerts,
         festivals and dance — an assembly of artistes and rasikas in the heart of Thanjavur.</p>
       <a class="cta" href="#videos">Watch Performances</a>
-      <a class="cta ghost" href="#about">About the Sabha</a>
+      <a class="cta ghost" href="#gallery">Photo Gallery</a>
     </div>
-    <!-- Brihadeeswara gopuram silhouette -->
     <svg class="gopuram" viewBox="0 0 1440 190" preserveAspectRatio="none" aria-hidden="true">
       <path fill="#4d6b01" d="M0,190 L0,150 L120,150 L120,120 L260,120 L260,150 L420,150 L420,190 Z
         M420,190 L420,140 L520,140 L540,60 L560,120 L580,40 L600,110 L620,20 L640,8 L660,20 L680,110 L700,40 L720,120 L740,60 L760,140 L860,140 L860,190 Z
@@ -236,47 +270,36 @@
           <p>The Sabha remains grateful to its patrons, well-wishers and members — the pillars of
             strength who have sustained its activities year after year and made every festival and
             celebration possible.</p>
+          <div class="jubilee-card">
+            <h3>Platinum Jubilee</h3>
+            <p>The Sabha proudly celebrated its Platinum Jubilee, marking seventy-five years of
+              service to Carnatic music, with a commemorative souvenir (malar) released on the
+              occasion.</p>
+          </div>
         </div>
-        <aside class="jubilee-card">
-          <h3>Platinum Jubilee</h3>
-          <p>The Sabha proudly celebrated its Platinum Jubilee, marking seventy-five years of
-            service to Carnatic music. A commemorative souvenir (malar) was released on the
-            occasion, made rich by the contributions of advertisers, patrons and members of the
-            Sabha.</p>
-        </aside>
+        <figure class="about-photo">
+          <img src="images/home/about.jpg" alt="Artistes performing on the Sabha stage" loading="lazy">
+          <figcaption>Artistes on the Sabha stage during the Maha Utsavam</figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- ================= TRADITION ================= -->
-  <section id="tradition" class="tradition">
+  <!-- ================= GLIMPSES ================= -->
+  <section class="glimpses" aria-label="Glimpses of recent programmes">
     <div class="container">
-      <div class="sec-head">
-        <p class="eyebrow">கலை மரபு</p>
-        <h2>Our Tradition</h2>
+      <div class="sec-head" style="margin-bottom:2rem">
+        <p class="eyebrow">சமீபத்திய நிகழ்வுகள்</p>
+        <h2>Glimpses of Our Programmes</h2>
         <div class="gold-rule"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 12l-7.1 3.1L12 22l-2.9-6.9L2 12l7.1-3.1z"/></svg></div>
       </div>
-      <div class="cards">
-        <div class="card">
-          <svg class="glyph" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9v7a2 2 0 0 0 2 2h3v-8H5v-1a7 7 0 0 1 14 0v1h-3v8h3a2 2 0 0 0 2-2v-7a9 9 0 0 0-9-9z"/></svg>
-          <h3>Sabha</h3>
-          <p>An assembly of musicians and rasikas in the context of Carnatic music — the living
-            forum where artiste and audience meet, and where the art is nurtured from one
-            generation to the next.</p>
-        </div>
-        <div class="card">
-          <svg class="glyph" viewBox="0 0 24 24"><path d="M12 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm-1 5h2l4 5-2 1.5V22h-2v-6h-2v6H9v-8.5L7 12l4-5z"/></svg>
-          <h3>Bharatanatyam</h3>
-          <p>The classical dance form that took shape in Tamil Nadu — an art of rhythm, expression
-            and devotion that the Sabha presents alongside music in its programmes each year.</p>
-        </div>
-        <div class="card">
-          <svg class="glyph" viewBox="0 0 24 24"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
-          <h3>Music Festival</h3>
-          <p>Multi-day celebrations of concerts by vidwans, vocalists and ensembles — the high
-            point of the Sabha's calendar, honouring Saint Thyagaraja and the Carnatic tradition.</p>
-        </div>
+      <div class="strip">
+        <a href="#gallery"><img src="images/home/moment-1.jpg" alt="Instrumental concert" loading="lazy"><figcaption>Instrumental concerts</figcaption></a>
+        <a href="#gallery"><img src="images/home/moment-2.jpg" alt="Vocal concert" loading="lazy"><figcaption>Vocal kutcheris</figcaption></a>
+        <a href="#gallery"><img src="images/home/moment-3.jpg" alt="Felicitation of artistes" loading="lazy"><figcaption>Felicitation of artistes</figcaption></a>
+        <a href="#gallery"><img src="images/home/moment-4.jpg" alt="Young artistes performing" loading="lazy"><figcaption>Young artistes</figcaption></a>
       </div>
+      <p class="strip-cta"><a href="#gallery">View the full photo gallery →</a></p>
     </div>
   </section>
 
@@ -298,11 +321,11 @@
           </div>
         </div>
         <div class="event">
-          <div class="when">Annual</div>
+          <div class="when">Margazhi</div>
           <div>
-            <h3>Music Festival</h3>
-            <p>The Sabha's flagship festival — several days of vocal and instrumental concerts
-              featuring senior vidwans and talented young performers.</p>
+            <h3>Margazhi Maha Utsavam</h3>
+            <p>The Sabha's flagship music festival — several days of vocal and instrumental
+              concerts featuring senior vidwans and talented young performers.</p>
           </div>
         </div>
         <div class="event">
@@ -325,8 +348,8 @@
         <h2>Video Gallery</h2>
         <div class="gold-rule"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 12l-7.1 3.1L12 22l-2.9-6.9L2 12l7.1-3.1z"/></svg></div>
         <p style="max-width:620px;margin:1rem auto 0;font-weight:300;color:#f7f2cd">
-          Performances and events from the Sabha, streamed from our official YouTube channel.
-          Every video uploaded to the channel appears here automatically.</p>
+          Performances and events from our official YouTube channel. New uploads appear here
+          automatically with their title and description.</p>
       </div>
 
       <!-- Full uploads playlist: contains ALL channel videos -->
@@ -339,11 +362,11 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
         </div>
-        <p class="player-note">Use the playlist icon in the player above to browse the complete list of the Sabha's videos.</p>
+        <p class="player-note">Use the playlist icon in the player to browse the complete list of the Sabha's videos.</p>
       </div>
 
-      <!-- Latest uploads grid (auto-populated from the channel feed) -->
-      <div class="video-grid" id="videoGrid" aria-live="polite"></div>
+      <!-- Latest uploads: list with title + description from the channel feed -->
+      <div class="video-list" id="videoList" aria-live="polite"></div>
       <p id="videoStatus">Loading the latest videos…</p>
 
       <div class="channel-cta">
@@ -360,19 +383,10 @@
         <p class="eyebrow">புகைப்படங்கள்</p>
         <h2>Photo Gallery</h2>
         <div class="gold-rule"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 12l-7.1 3.1L12 22l-2.9-6.9L2 12l7.1-3.1z"/></svg></div>
-        <p style="max-width:560px;margin:1rem auto 0;font-weight:300">Moments from the Sabha's concerts, festivals and celebrations.
-          Replace these placeholders with your photographs.</p>
+        <p style="max-width:560px;margin:1rem auto 0;font-weight:300">Moments from the Sabha's concerts, festivals and celebrations. Click any photo to view it full size.</p>
       </div>
-      <div class="photo-grid">
-        <figure class="photo"><svg viewBox="0 0 24 24"><path d="M21 5H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zM5 15l3.5-4.5 2.5 3 3.5-4.5L19 15H5z"/></svg><figcaption>Platinum Jubilee celebrations</figcaption></figure>
-        <figure class="photo"><svg viewBox="0 0 24 24"><path d="M21 5H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zM5 15l3.5-4.5 2.5 3 3.5-4.5L19 15H5z"/></svg><figcaption>Music festival concerts</figcaption></figure>
-        <figure class="photo"><svg viewBox="0 0 24 24"><path d="M21 5H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zM5 15l3.5-4.5 2.5 3 3.5-4.5L19 15H5z"/></svg><figcaption>Bharatanatyam recitals</figcaption></figure>
-        <figure class="photo"><svg viewBox="0 0 24 24"><path d="M21 5H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zM5 15l3.5-4.5 2.5 3 3.5-4.5L19 15H5z"/></svg><figcaption>Felicitation of artistes</figcaption></figure>
-        <figure class="photo"><svg viewBox="0 0 24 24"><path d="M21 5H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zM5 15l3.5-4.5 2.5 3 3.5-4.5L19 15H5z"/></svg><figcaption>Souvenir (malar) release</figcaption></figure>
-        <figure class="photo"><svg viewBox="0 0 24 24"><path d="M21 5H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zM5 15l3.5-4.5 2.5 3 3.5-4.5L19 15H5z"/></svg><figcaption>Aradhana homage</figcaption></figure>
-        <figure class="photo"><svg viewBox="0 0 24 24"><path d="M21 5H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zM5 15l3.5-4.5 2.5 3 3.5-4.5L19 15H5z"/></svg><figcaption>Young artistes on stage</figcaption></figure>
-        <figure class="photo"><svg viewBox="0 0 24 24"><path d="M21 5H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zM5 15l3.5-4.5 2.5 3 3.5-4.5L19 15H5z"/></svg><figcaption>Members &amp; patrons</figcaption></figure>
-      </div>
+      <div class="photo-grid" id="photoGrid"></div>
+      <div class="gallery-more"><button id="moreBtn" onclick="showMore()">Show More Photos</button></div>
     </div>
   </section>
 
@@ -386,18 +400,29 @@
       </div>
       <div class="contact-grid">
         <div class="card">
-          <h3>Address</h3>
-          <p>Sri Thyagabrahma Sabha<br>
-             [Street address]<br>
-             Thanjavur, Tamil Nadu, India</p>
+          <h3 style="font-family:var(--display);font-weight:400;color:var(--maroon);font-size:1.25rem;margin-bottom:1rem">Reach the Sabha</h3>
+          <p><span class="label">Address</span>
+             Sri Thyagabrahma Sabha, Thanjavur<br>
+             Opp. to Jupiter Theatre, Anna Salai,<br>
+             Keelavasal Street, Thanjavur – 613 001<br>
+             Tamil Nadu, India</p>
+          <p><span class="label">Phone</span>
+             <a href="tel:+919442644812">+91&nbsp;94426&nbsp;44812</a></p>
+          <p><span class="label">Email</span>
+             <a href="mailto:stbs.thanjavur@gmail.com">stbs.thanjavur@gmail.com</a></p>
+          <p><span class="label">YouTube</span>
+             <a href="https://www.youtube.com/@SriThyagabrahmaSabhaThanjavur" target="_blank" rel="noopener">@SriThyagabrahmaSabhaThanjavur</a></p>
         </div>
-        <div class="card">
-          <h3>Phone &amp; Email</h3>
-          <p>[Phone number]<br>[Email address]</p>
-        </div>
-        <div class="card">
-          <h3>Follow Us</h3>
-          <p><a href="https://www.youtube.com/@SriThyagabrahmaSabhaThanjavur" target="_blank" rel="noopener">YouTube — @SriThyagabrahmaSabhaThanjavur</a></p>
+        <div>
+          <div class="map-shell">
+            <iframe
+              src="https://www.google.com/maps?q=Sri%20Thyagabrahma%20Sabha%2C%20Keelavasal%2C%20Anna%20Salai%2C%20Thanjavur%20613001&output=embed"
+              title="Map — Sri Thyagabrahma Sabha, Thanjavur"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen></iframe>
+          </div>
+          <a class="map-link" href="https://share.google/DqHEbYLp7e813hDMZ" target="_blank" rel="noopener">Open in Google Maps →</a>
         </div>
       </div>
     </div>
@@ -405,13 +430,26 @@
 
 </main>
 
+<!-- Lightbox for photo gallery -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-btn close" onclick="closeLb()" aria-label="Close">×</button>
+  <button class="lb-btn prev" onclick="stepLb(-1)" aria-label="Previous photo">‹</button>
+  <img id="lbImg" src="" alt="Sabha photo">
+  <button class="lb-btn next" onclick="stepLb(1)" aria-label="Next photo">›</button>
+  <div class="count" id="lbCount"></div>
+</div>
+
 <footer>
   <div class="foot-inner">
     <div>
       <div style="font-family:var(--display);font-size:1.1rem;color:#fff">Sri Thyagabrahma Sabha — Thanjavur</div>
       <div class="ta">இசையே வாழ்க்கை · வாழ்க்கையே இசை</div>
     </div>
-    <div class="foot-note">© <span id="year"></span> Sri Thyagabrahma Sabha, Thanjavur. All rights reserved.</div>
+    <div class="foot-note">
+      Opp. to Jupiter Theatre, Anna Salai, Keelavasal Street, Thanjavur – 613 001<br>
+      <a href="tel:+919442644812">+91 94426 44812</a> · <a href="mailto:stbs.thanjavur@gmail.com">stbs.thanjavur@gmail.com</a><br>
+      © <span id="year"></span> Sri Thyagabrahma Sabha, Thanjavur. All rights reserved.
+    </div>
   </div>
 </footer>
 
@@ -423,47 +461,103 @@
     const open = list.classList.toggle('open');
     btn.setAttribute('aria-expanded', open);
   }
-  // close mobile menu on link click
   document.querySelectorAll('#navList a').forEach(a => a.addEventListener('click', () => {
     document.getElementById('navList').classList.remove('open');
   }));
 
-  /* ---------- Video gallery: auto-load latest uploads from the channel feed ---------- */
+  /* ================= PHOTO GALLERY ================= */
+  const TOTAL_PHOTOS = 159;           // images/gallery/img-001.jpg … img-159.jpg
+  const BATCH = 24;                   // photos shown per "Show More"
+  let shown = 0;
+
+  const pad = n => String(n).padStart(3, '0');
+  const imgPath = n => `images/gallery/img-${pad(n)}.jpg`;
+
+  function showMore(){
+    const grid = document.getElementById('photoGrid');
+    const end = Math.min(shown + BATCH, TOTAL_PHOTOS);
+    let html = '';
+    for(let i = shown + 1; i <= end; i++){
+      html += `<button onclick="openLb(${i})" aria-label="View photo ${i}">
+                 <img src="${imgPath(i)}" alt="Sabha programme photo ${i}" loading="lazy">
+               </button>`;
+    }
+    grid.insertAdjacentHTML('beforeend', html);
+    shown = end;
+    if(shown >= TOTAL_PHOTOS) document.getElementById('moreBtn').style.display = 'none';
+  }
+  showMore(); // initial batch
+
+  /* lightbox */
+  let lbIndex = 1;
+  function openLb(i){
+    lbIndex = i;
+    document.getElementById('lbImg').src = imgPath(i);
+    document.getElementById('lbCount').textContent = i + ' / ' + TOTAL_PHOTOS;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb(){
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function stepLb(d){
+    lbIndex = ((lbIndex - 1 + d + TOTAL_PHOTOS) % TOTAL_PHOTOS) + 1;
+    openLb(lbIndex);
+  }
+  document.getElementById('lightbox').addEventListener('click', e => {
+    if(e.target.id === 'lightbox') closeLb();
+  });
+  document.addEventListener('keydown', e => {
+    if(!document.getElementById('lightbox').classList.contains('open')) return;
+    if(e.key === 'Escape') closeLb();
+    if(e.key === 'ArrowLeft') stepLb(-1);
+    if(e.key === 'ArrowRight') stepLb(1);
+  });
+
+  /* ================= VIDEO GALLERY (list with title + description) ================= */
   const CHANNEL_ID = 'UCBOag0URjoVO5nGzY0yXQCw';
   const FEED = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + CHANNEL_ID;
 
+  function esc(s){
+    return (s || '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  }
+
   async function loadVideos(){
-    const grid = document.getElementById('videoGrid');
+    const list = document.getElementById('videoList');
     const status = document.getElementById('videoStatus');
     try{
-      // rss2json converts the channel feed to CORS-friendly JSON (latest ~15 uploads)
       const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(FEED));
       if(!res.ok) throw new Error('Feed request failed');
       const data = await res.json();
       if(!data.items || !data.items.length) throw new Error('No videos in feed');
 
-      grid.innerHTML = data.items.map(item => {
+      list.innerHTML = data.items.map(item => {
         const idMatch = (item.link || '').match(/[?&]v=([\w-]{6,})/);
         const vid = idMatch ? idMatch[1] : (item.guid || '').split(':').pop();
         const thumb = item.thumbnail || ('https://i.ytimg.com/vi/' + vid + '/hqdefault.jpg');
         const date = item.pubDate ? new Date(item.pubDate).toLocaleDateString('en-IN',
-                     {year:'numeric', month:'short', day:'numeric'}) : '';
+                     {year:'numeric', month:'long', day:'numeric'}) : '';
+        const desc = esc((item.description || '').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim());
         return `
-          <a class="vid" href="${item.link}" target="_blank" rel="noopener">
+          <a class="vrow" href="${esc(item.link)}" target="_blank" rel="noopener">
             <div class="thumb">
-              <img src="${thumb}" alt="" loading="lazy">
-              <div class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+              <div class="frame">
+                <img src="${esc(thumb)}" alt="" loading="lazy">
+                <div class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+              </div>
             </div>
-            <div class="meta">
-              <h3>${item.title}</h3>
+            <div class="info">
+              <h3>${esc(item.title)}</h3>
               <time>${date}</time>
+              ${desc ? `<p>${desc}</p>` : ''}
+              <span class="watch">Watch on YouTube →</span>
             </div>
           </a>`;
       }).join('');
       status.textContent = '';
     }catch(err){
-      // Fallback: the playlist player above already contains every channel video
-      status.textContent = 'Latest-video thumbnails could not be loaded right now — please use the player above or visit our YouTube channel to browse all videos.';
+      status.textContent = 'Latest videos could not be loaded right now — please use the player above or visit our YouTube channel.';
       console.error('Video feed error:', err);
     }
   }
