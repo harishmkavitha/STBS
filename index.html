@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Thyagabrahma Sabha - Thanjavur</title>
+<meta name="description" content="Sri Thyagabrahma Sabha, Thanjavur — promoting Carnatic music, dance and the legacy of Saint Thyagaraja. Concerts, festivals, video gallery and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Karma:wght@300;400;500;600&family=Noto+Serif+Tamil:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon:#5c8001;
+    --maroon-2:#6f9a0f;
+    --kumkum:#fb6107;
+    --gold:#fbb02d;
+    --gold-light:#f3de2c;
+    --ivory:#fffdf0;
+    --ivory-2:#fbf3d2;
+    --ink:#2f3a08;
+    --display:'Marcellus',serif;
+    --body:'Karma',serif;
+    --tamil:'Noto Serif Tamil',serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);color:var(--ink);background:var(--ivory);line-height:1.7;font-size:17px}
+  img{max-width:100%;display:block}
+  a{color:var(--kumkum)}
+
+  /* ---------- top ribbon ---------- */
+  .ribbon{background:var(--kumkum);color:var(--ivory);text-align:center;font-size:.85rem;letter-spacing:.08em;padding:.35rem 1rem}
+
+  /* ---------- header ---------- */
+  header{background:var(--maroon);border-bottom:3px solid var(--gold);position:sticky;top:0;z-index:50}
+  .nav-wrap{max-width:1150px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:.7rem 1.25rem;gap:1rem}
+  .brand{display:flex;align-items:center;gap:.8rem;text-decoration:none}
+  .brand-mark{width:46px;height:46px;flex:none}
+  .brand-text{line-height:1.25}
+  .brand-text .en{font-family:var(--display);color:var(--gold-light);font-size:1.15rem;letter-spacing:.04em}
+  .brand-text .ta{font-family:var(--tamil);color:var(--ivory);font-size:.8rem;opacity:.85}
+  nav ul{display:flex;gap:1.4rem;list-style:none}
+  nav a{color:var(--ivory);text-decoration:none;font-size:.95rem;letter-spacing:.05em;padding:.3rem 0;border-bottom:2px solid transparent;transition:.25s}
+  nav a:hover,nav a:focus-visible{color:var(--gold-light);border-bottom-color:var(--gold)}
+  .menu-btn{display:none;background:none;border:1px solid var(--gold);color:var(--gold-light);font-size:1.3rem;padding:.2rem .6rem;border-radius:4px;cursor:pointer}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;background:
+      radial-gradient(1200px 500px at 50% -10%, #7cb518 0%, var(--maroon) 55%);
+      color:var(--ivory);overflow:hidden}
+  .hero-inner{max-width:1150px;margin:0 auto;padding:5.5rem 1.25rem 7.5rem;text-align:center;position:relative;z-index:2}
+  .hero .ta-line{font-family:var(--tamil);color:var(--gold-light);font-size:1.05rem;margin-bottom:.9rem}
+  .hero h1{font-family:var(--display);font-weight:400;font-size:clamp(2.1rem,5.5vw,3.6rem);letter-spacing:.03em;color:#fff}
+  .hero h1 span{color:var(--gold-light)}
+  .hero p.tag{max-width:640px;margin:1.2rem auto 2rem;font-size:1.05rem;color:#fdf6d8;font-weight:300}
+  .hero .cta{display:inline-block;background:var(--gold);color:var(--maroon);font-family:var(--display);letter-spacing:.08em;text-decoration:none;padding:.8rem 2.2rem;border-radius:2px;transition:.25s}
+  .hero .cta:hover{background:var(--gold-light)}
+  .hero .cta.ghost{background:transparent;border:1px solid var(--gold);color:var(--gold-light);margin-left:.8rem}
+  .gopuram{position:absolute;bottom:-4px;left:0;width:100%;z-index:1;opacity:.9}
+
+  /* ---------- section scaffolding ---------- */
+  section{padding:4.5rem 1.25rem}
+  .container{max-width:1150px;margin:0 auto}
+  .sec-head{text-align:center;margin-bottom:2.8rem}
+  .sec-head .eyebrow{font-family:var(--tamil);color:var(--kumkum);font-size:.95rem}
+  .sec-head h2{font-family:var(--display);font-weight:400;font-size:clamp(1.7rem,3.5vw,2.4rem);color:var(--maroon);letter-spacing:.03em;margin:.3rem 0 .8rem}
+  .gold-rule{display:flex;align-items:center;justify-content:center;gap:.7rem}
+  .gold-rule::before,.gold-rule::after{content:"";height:1px;width:70px;background:var(--gold)}
+  .gold-rule svg{width:22px;height:22px;fill:var(--gold)}
+
+  /* ---------- about ---------- */
+  .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center}
+  .about-grid p{margin-bottom:1rem}
+  .jubilee-card{background:var(--maroon);color:var(--ivory);padding:2.2rem;border:1px solid var(--gold);position:relative}
+  .jubilee-card::after{content:"";position:absolute;inset:8px;border:1px solid rgba(251,176,45,.45);pointer-events:none}
+  .jubilee-card h3{font-family:var(--display);font-weight:400;color:var(--gold-light);font-size:1.4rem;margin-bottom:.8rem}
+  .jubilee-card p{font-size:.98rem;color:#f7f2cd;font-weight:300}
+
+  /* ---------- tradition cards ---------- */
+  .tradition{background:var(--ivory-2)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+  .card{background:var(--ivory);border:1px solid #e6d879;border-top:4px solid var(--kumkum);padding:1.8rem;transition:.25s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(92,128,1,.18)}
+  .card .glyph{width:40px;height:40px;fill:var(--gold);margin-bottom:1rem}
+  .card h3{font-family:var(--display);font-weight:400;color:var(--maroon);font-size:1.25rem;margin-bottom:.5rem}
+  .card p{font-size:.95rem}
+
+  /* ---------- events ---------- */
+  .events-list{max-width:820px;margin:0 auto}
+  .event{display:flex;gap:1.5rem;padding:1.4rem 0;border-bottom:1px solid #e6d879;align-items:flex-start}
+  .event:last-child{border-bottom:none}
+  .event .when{flex:none;width:120px;font-family:var(--display);color:var(--kumkum);font-size:1rem;line-height:1.4;padding-top:.15rem}
+  .event h3{font-family:var(--display);font-weight:400;color:var(--maroon);font-size:1.15rem}
+  .event p{font-size:.95rem}
+
+  /* ---------- video gallery ---------- */
+  .videos{background:var(--maroon);color:var(--ivory)}
+  .videos .sec-head h2{color:#fff}
+  .videos .sec-head .eyebrow{color:var(--gold-light)}
+  .videos .gold-rule::before,.videos .gold-rule::after{background:var(--gold)}
+  .player-shell{max-width:900px;margin:0 auto 3rem;border:1px solid var(--gold);padding:8px;background:#4d6b01}
+  .player-shell .ratio{position:relative;padding-top:56.25%}
+  .player-shell iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .player-note{text-align:center;font-size:.9rem;color:#f5efc4;margin-top:.7rem;font-weight:300}
+  .video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:1rem}
+  .vid{background:#4d6b01;border:1px solid rgba(251,176,45,.5);text-decoration:none;color:var(--ivory);transition:.25s;display:block}
+  .vid:hover{border-color:var(--gold-light);transform:translateY(-4px)}
+  .vid .thumb{position:relative;padding-top:56.25%;overflow:hidden;background:#435c00}
+  .vid .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .vid .thumb .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+  .vid .thumb .play span{width:52px;height:52px;border-radius:50%;background:rgba(251,97,7,.92);display:flex;align-items:center;justify-content:center;transition:.25s}
+  .vid:hover .thumb .play span{background:var(--kumkum);transform:scale(1.08)}
+  .vid .thumb .play svg{width:20px;height:20px;fill:#fff;margin-left:3px}
+  .vid .meta{padding:.9rem 1rem 1.1rem}
+  .vid .meta h3{font-family:var(--body);font-weight:500;font-size:.92rem;line-height:1.45;color:#fdf9e3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .vid .meta time{font-size:.78rem;color:var(--gold-light);letter-spacing:.05em}
+  .videos .channel-cta{text-align:center;margin-top:2.6rem}
+  .videos .channel-cta a{display:inline-block;border:1px solid var(--gold);color:var(--gold-light);text-decoration:none;font-family:var(--display);letter-spacing:.08em;padding:.75rem 2rem;transition:.25s}
+  .videos .channel-cta a:hover{background:var(--gold);color:var(--maroon)}
+  #videoStatus{text-align:center;color:#f5efc4;font-weight:300;margin-top:1rem}
+
+  /* ---------- gallery ---------- */
+  .photo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+  .photo{position:relative;padding-top:75%;background:linear-gradient(135deg,var(--maroon-2),var(--maroon));border:1px solid #e6d879;overflow:hidden}
+  .photo svg{position:absolute;inset:0;margin:auto;width:44px;height:44px;fill:rgba(243,222,44,.6)}
+  .photo figcaption{position:absolute;bottom:0;left:0;right:0;background:rgba(59,13,12,.85);color:var(--ivory);font-size:.8rem;padding:.4rem .7rem;letter-spacing:.04em}
+
+  /* ---------- contact ---------- */
+  .contact{background:var(--ivory-2)}
+  .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;max-width:1000px;margin:0 auto}
+  .contact .card{border-top-color:var(--gold)}
+  .contact .card p{word-break:break-word}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--maroon);color:#f5efc4;border-top:3px solid var(--gold)}
+  .foot-inner{max-width:1150px;margin:0 auto;padding:2.4rem 1.25rem;display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;align-items:center}
+  footer .ta{font-family:var(--tamil);color:var(--gold-light)}
+  footer a{color:var(--gold-light)}
+  .foot-note{font-size:.85rem;font-weight:300}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:900px){
+    .about-grid{grid-template-columns:1fr}
+    .cards,.contact-grid{grid-template-columns:1fr 1fr}
+    .video-grid{grid-template-columns:1fr 1fr}
+    .photo-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:640px){
+    nav ul{position:absolute;top:100%;left:0;right:0;background:var(--maroon);flex-direction:column;gap:0;display:none;border-bottom:2px solid var(--gold)}
+    nav ul.open{display:flex}
+    nav li{border-top:1px solid rgba(251,176,45,.3)}
+    nav a{display:block;padding:.9rem 1.25rem}
+    .menu-btn{display:block}
+    .cards,.contact-grid,.video-grid{grid-template-columns:1fr}
+    .event{flex-direction:column;gap:.3rem}
+    .hero .cta.ghost{margin-left:0;margin-top:.8rem}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important;animation:none!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<div class="ribbon">Promoting Carnatic music &amp; classical arts in the cultural capital of Tamil Nadu</div>
+
+<header>
+  <div class="nav-wrap">
+    <a class="brand" href="#home" aria-label="Sri Thyagabrahma Sabha home">
+      <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+        <!-- veena-inspired mark -->
+        <circle cx="24" cy="24" r="22" fill="none" stroke="#fbb02d" stroke-width="1.5"/>
+        <path d="M13 33c8-2 14-8 16-16l4-4 2 2-4 4c-2 8-8 14-16 16l-2-2z" fill="#fbb02d"/>
+        <circle cx="14" cy="34" r="4.5" fill="none" stroke="#f3de2c" stroke-width="1.5"/>
+        <circle cx="34" cy="14" r="2.5" fill="none" stroke="#f3de2c" stroke-width="1.5"/>
+      </svg>
+      <span class="brand-text">
+        <span class="en">Sri Thyagabrahma Sabha</span><br>
+        <span class="ta">ஸ்ரீ தியாகப்பிரம்ம சபா · தஞ்சாவூர்</span>
+      </span>
+    </a>
+    <nav aria-label="Main">
+      <button class="menu-btn" aria-expanded="false" aria-controls="navList" onclick="toggleMenu(this)">☰</button>
+      <ul id="navList">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#tradition">Tradition</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#videos">Video Gallery</a></li>
+        <li><a href="#gallery">Photos</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+
+  <!-- ================= HERO ================= -->
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="ta-line">நாத பிரம்மத்தின் சேவையில்</p>
+      <h1>Sri Thyagabrahma Sabha<br><span>Thanjavur</span></h1>
+      <p class="tag">Carrying forward the musical legacy of Saint Thyagaraja through concerts,
+        festivals and dance — an assembly of artistes and rasikas in the heart of Thanjavur.</p>
+      <a class="cta" href="#videos">Watch Performances</a>
+      <a class="cta ghost" href="#about">About the Sabha</a>
+    </div>
+    <!-- Brihadeeswara gopuram silhouette -->
+    <svg class="gopuram" viewBox="0 0 1440 190" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="#4d6b01" d="M0,190 L0,150 L120,150 L120,120 L260,120 L260,150 L420,150 L420,190 Z
+        M420,190 L420,140 L520,140 L540,60 L560,120 L580,40 L600,110 L620,20 L640,8 L660,20 L680,110 L700,40 L720,120 L740,60 L760,140 L860,140 L860,190 Z
+        M860,190 L860,150 L1020,150 L1020,115 L1160,115 L1160,150 L1300,150 L1300,190 Z
+        M1300,190 L1300,155 L1440,155 L1440,190 Z"/>
+      <path fill="#fbb02d" d="M636,0 L644,0 L644,10 L636,10 Z"/>
+    </svg>
+  </div>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about">
+    <div class="container">
+      <div class="sec-head">
+        <p class="eyebrow">சபா அறிமுகம்</p>
+        <h2>About the Sabha</h2>
+        <div class="gold-rule"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 12l-7.1 3.1L12 22l-2.9-6.9L2 12l7.1-3.1z"/></svg></div>
+      </div>
+      <div class="about-grid">
+        <div>
+          <p>Sri Thyagabrahma Sabha, Thanjavur is devoted to the promotion of Carnatic music and
+            the classical arts, in the very region where the Trinity of Carnatic music —
+            Saint Thyagaraja, Muthuswami Dikshitar and Syama Sastri — lived and composed.</p>
+          <p>Through the decades, the Sabha has served as a stage for legendary vidwans and
+            promising young artistes alike, presenting vocal and instrumental concerts,
+            Bharatanatyam recitals, harikatha and annual festivals for the rasikas of Thanjavur.</p>
+          <p>The Sabha remains grateful to its patrons, well-wishers and members — the pillars of
+            strength who have sustained its activities year after year and made every festival and
+            celebration possible.</p>
+        </div>
+        <aside class="jubilee-card">
+          <h3>Platinum Jubilee</h3>
+          <p>The Sabha proudly celebrated its Platinum Jubilee, marking seventy-five years of
+            service to Carnatic music. A commemorative souvenir (malar) was released on the
+            occasion, made rich by the contributions of advertisers, patrons and members of the
+            Sabha.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TRADITION ================= -->
+  <section id="tradition" class="tradition">
+    <div class="container">
+      <div class="sec-head">
+        <p class="eyebrow">கலை மரபு</p>
+        <h2>Our Tradition</h2>
+        <div class="gold-rule"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 12l-7.1 3.1L12 22l-2.9-6.9L2 12l7.1-3.1z"/></svg></div>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <svg class="glyph" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9v7a2 2 0 0 0 2 2h3v-8H5v-1a7 7 0 0 1 14 0v1h-3v8h3a2 2 0 0 0 2-2v-7a9 9 0 0 0-9-9z"/></svg>
+          <h3>Sabha</h3>
+          <p>An assembly of musicians and rasikas in the context of Carnatic music — the living
+            forum where artiste and audience meet, and where the art is nurtured from one
+            generation to the next.</p>
+        </div>
+        <div class="card">
+          <svg class="glyph" viewBox="0 0 24 24"><path d="M12 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm-1 5h2l4 5-2 1.5V22h-2v-6h-2v6H9v-8.5L7 12l4-5z"/></svg>
+          <h3>Bharatanatyam</h3>
+          <p>The classical dance form that took shape in Tamil Nadu — an art of rhythm, expression
+            and devotion that the Sabha presents alongside music in its programmes each year.</p>
+        </div>
+        <div class="card">
+          <svg class="glyph" viewBox="0 0 24 24"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
+          <h3>Music Festival</h3>
+          <p>Multi-day celebrations of concerts by vidwans, vocalists and ensembles — the high
+            point of the Sabha's calendar, honouring Saint Thyagaraja and the Carnatic tradition.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EVENTS ================= -->
+  <section id="events">
+    <div class="container">
+      <div class="sec-head">
+        <p class="eyebrow">நிகழ்ச்சிகள்</p>
+        <h2>Programmes &amp; Festivals</h2>
+        <div class="gold-rule"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 12l-7.1 3.1L12 22l-2.9-6.9L2 12l7.1-3.1z"/></svg></div>
+      </div>
+      <div class="events-list">
+        <div class="event">
+          <div class="when">January</div>
+          <div>
+            <h3>Sri Thyagaraja Aradhana</h3>
+            <p>Homage to Saint Thyagaraja with the rendering of the Pancharatna kritis and
+              concerts by invited artistes, observed in the season of the annual Aradhana.</p>
+          </div>
+        </div>
+        <div class="event">
+          <div class="when">Annual</div>
+          <div>
+            <h3>Music Festival</h3>
+            <p>The Sabha's flagship festival — several days of vocal and instrumental concerts
+              featuring senior vidwans and talented young performers.</p>
+          </div>
+        </div>
+        <div class="event">
+          <div class="when">Year-round</div>
+          <div>
+            <h3>Monthly Concerts &amp; Dance Recitals</h3>
+            <p>Regular kutcheris, Bharatanatyam recitals and harikatha programmes for the
+              rasikas of Thanjavur, with a special place for emerging artistes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VIDEO GALLERY ================= -->
+  <section id="videos" class="videos">
+    <div class="container">
+      <div class="sec-head">
+        <p class="eyebrow">காணொளி தொகுப்பு</p>
+        <h2>Video Gallery</h2>
+        <div class="gold-rule"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 12l-7.1 3.1L12 22l-2.9-6.9L2 12l7.1-3.1z"/></svg></div>
+        <p style="max-width:620px;margin:1rem auto 0;font-weight:300;color:#f7f2cd">
+          Performances and events from the Sabha, streamed from our official YouTube channel.
+          Every video uploaded to the channel appears here automatically.</p>
+      </div>
+
+      <!-- Full uploads playlist: contains ALL channel videos -->
+      <div class="player-shell">
+        <div class="ratio">
+          <iframe
+            src="https://www.youtube.com/embed/videoseries?list=UUBOag0URjoVO5nGzY0yXQCw"
+            title="Sri Thyagabrahma Sabha Thanjavur — all videos"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <p class="player-note">Use the playlist icon in the player above to browse the complete list of the Sabha's videos.</p>
+      </div>
+
+      <!-- Latest uploads grid (auto-populated from the channel feed) -->
+      <div class="video-grid" id="videoGrid" aria-live="polite"></div>
+      <p id="videoStatus">Loading the latest videos…</p>
+
+      <div class="channel-cta">
+        <a href="https://www.youtube.com/@SriThyagabrahmaSabhaThanjavur" target="_blank" rel="noopener">
+          Visit our YouTube Channel →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PHOTO GALLERY ================= -->
+  <section id="gallery">
+    <div class="container">
+      <div class="sec-head">
+        <p class="eyebrow">புகைப்படங்கள்</p>
+        <h2>Photo Gallery</h2>
+        <div class="gold-rule"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 12l-7.1 3.1L12 22l-2.9-6.9L2 12l7.1-3.1z"/></svg></div>
+        <p style="max-width:560px;margin:1rem auto 0;font-weight:300">Moments from the Sabha's concerts, festivals and celebrations.
+          Replace these placeholders with your photographs.</p>
+      </div>
+      <div class="photo-grid">
+        <figure class="photo"><svg viewBox="0 0 24 24"><path d="M21 5H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zM5 15l3.5-4.5 2.5 3 3.5-4.5L19 15H5z"/></svg><figcaption>Platinum Jubilee celebrations</figcaption></figure>
+        <figure class="photo"><svg viewBox="0 0 24 24"><path d="M21 5H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zM5 15l3.5-4.5 2.5 3 3.5-4.5L19 15H5z"/></svg><figcaption>Music festival concerts</figcaption></figure>
+        <figure class="photo"><svg viewBox="0 0 24 24"><path d="M21 5H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zM5 15l3.5-4.5 2.5 3 3.5-4.5L19 15H5z"/></svg><figcaption>Bharatanatyam recitals</figcaption></figure>
+        <figure class="photo"><svg viewBox="0 0 24 24"><path d="M21 5H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zM5 15l3.5-4.5 2.5 3 3.5-4.5L19 15H5z"/></svg><figcaption>Felicitation of artistes</figcaption></figure>
+        <figure class="photo"><svg viewBox="0 0 24 24"><path d="M21 5H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zM5 15l3.5-4.5 2.5 3 3.5-4.5L19 15H5z"/></svg><figcaption>Souvenir (malar) release</figcaption></figure>
+        <figure class="photo"><svg viewBox="0 0 24 24"><path d="M21 5H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zM5 15l3.5-4.5 2.5 3 3.5-4.5L19 15H5z"/></svg><figcaption>Aradhana homage</figcaption></figure>
+        <figure class="photo"><svg viewBox="0 0 24 24"><path d="M21 5H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zM5 15l3.5-4.5 2.5 3 3.5-4.5L19 15H5z"/></svg><figcaption>Young artistes on stage</figcaption></figure>
+        <figure class="photo"><svg viewBox="0 0 24 24"><path d="M21 5H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zM5 15l3.5-4.5 2.5 3 3.5-4.5L19 15H5z"/></svg><figcaption>Members &amp; patrons</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="sec-head">
+        <p class="eyebrow">தொடர்பு கொள்ள</p>
+        <h2>Contact Us</h2>
+        <div class="gold-rule"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.9L22 12l-7.1 3.1L12 22l-2.9-6.9L2 12l7.1-3.1z"/></svg></div>
+      </div>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Address</h3>
+          <p>Sri Thyagabrahma Sabha<br>
+             [Street address]<br>
+             Thanjavur, Tamil Nadu, India</p>
+        </div>
+        <div class="card">
+          <h3>Phone &amp; Email</h3>
+          <p>[Phone number]<br>[Email address]</p>
+        </div>
+        <div class="card">
+          <h3>Follow Us</h3>
+          <p><a href="https://www.youtube.com/@SriThyagabrahmaSabhaThanjavur" target="_blank" rel="noopener">YouTube — @SriThyagabrahmaSabhaThanjavur</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <div>
+      <div style="font-family:var(--display);font-size:1.1rem;color:#fff">Sri Thyagabrahma Sabha — Thanjavur</div>
+      <div class="ta">இசையே வாழ்க்கை · வாழ்க்கையே இசை</div>
+    </div>
+    <div class="foot-note">© <span id="year"></span> Sri Thyagabrahma Sabha, Thanjavur. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function toggleMenu(btn){
+    const list = document.getElementById('navList');
+    const open = list.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  }
+  // close mobile menu on link click
+  document.querySelectorAll('#navList a').forEach(a => a.addEventListener('click', () => {
+    document.getElementById('navList').classList.remove('open');
+  }));
+
+  /* ---------- Video gallery: auto-load latest uploads from the channel feed ---------- */
+  const CHANNEL_ID = 'UCBOag0URjoVO5nGzY0yXQCw';
+  const FEED = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + CHANNEL_ID;
+
+  async function loadVideos(){
+    const grid = document.getElementById('videoGrid');
+    const status = document.getElementById('videoStatus');
+    try{
+      // rss2json converts the channel feed to CORS-friendly JSON (latest ~15 uploads)
+      const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(FEED));
+      if(!res.ok) throw new Error('Feed request failed');
+      const data = await res.json();
+      if(!data.items || !data.items.length) throw new Error('No videos in feed');
+
+      grid.innerHTML = data.items.map(item => {
+        const idMatch = (item.link || '').match(/[?&]v=([\w-]{6,})/);
+        const vid = idMatch ? idMatch[1] : (item.guid || '').split(':').pop();
+        const thumb = item.thumbnail || ('https://i.ytimg.com/vi/' + vid + '/hqdefault.jpg');
+        const date = item.pubDate ? new Date(item.pubDate).toLocaleDateString('en-IN',
+                     {year:'numeric', month:'short', day:'numeric'}) : '';
+        return `
+          <a class="vid" href="${item.link}" target="_blank" rel="noopener">
+            <div class="thumb">
+              <img src="${thumb}" alt="" loading="lazy">
+              <div class="play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+            </div>
+            <div class="meta">
+              <h3>${item.title}</h3>
+              <time>${date}</time>
+            </div>
+          </a>`;
+      }).join('');
+      status.textContent = '';
+    }catch(err){
+      // Fallback: the playlist player above already contains every channel video
+      status.textContent = 'Latest-video thumbnails could not be loaded right now — please use the player above or visit our YouTube channel to browse all videos.';
+      console.error('Video feed error:', err);
+    }
+  }
+  loadVideos();
+</script>
+
+</body>
+</html>
